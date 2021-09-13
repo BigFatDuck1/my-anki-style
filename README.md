@@ -1,8 +1,6 @@
 # Random Cloze Color
 
-![Screenshot](https://github.com/BigFatDuck1/random_cloze_color_anki/blob/master/images/screencap.gif)
-
-*Simple script that randomly changes the color of the Cloze part of each card during review*
+The template I use to style my anki cards. Randomly changes color of the cloze portion and also the font of every card.
 
 ## Usage
 
