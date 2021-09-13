@@ -1,4 +1,4 @@
-# Random Cloze Color
+# My Anki Stylesheet
 
 The template I use to style my anki cards. Randomly changes color of the cloze portion and also the font of every card.
 
