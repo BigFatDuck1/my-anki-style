@@ -1,0 +1,104 @@
+/* Credits:
+RedNebMas:
+https://gist.github.com/rednebmas/7579112c3e2a8c97f8d9
+
+Shamin Adhmed
+https://medshamim.com/med/how-to-design-beautiful-anki-cards
+
+*/
+
+html { overflow: scroll; overflow-x: hidden; }
+/* CONTAINER FOR YOUR CARDS */
+#kard {
+    padding: 0px 0px;
+    max-width: 700px; /* CHANGE CARD SIZE HERE */
+    margin: 0 auto; /* CENTERS THE CARD IN THE MIDDLE OF THE WINDOW */
+    word-wrap: break-word; /* BREAKS UP LONG WORKS */
+}
+
+:root {
+	--cloze_color: yellow
+}
+
+/* APPLIES TO THE WHOLE CARD */
+.card {
+    font-family: Menlo, baskerville, sans;
+    font-size: 18px; /* FONT SIZE */
+    text-align: center; /* ALIGN TEXT */
+    color: #D7DEE9; /* FONT COLOR */
+    line-height: 1.6em;
+    background-color: #181818; /* BACKGROUND COLOR */
+}
+
+.card.night_mode {
+    font-family: Menlo, baskerville, sans;
+    font-size: 18px; /* FONT SIZE */
+    text-align: center; /* ALIGN TEXT */
+    color: #D7DEE9; /* FONT COLOR */
+    line-height: 1.6em;
+    background-color: #181818; /* BACKGROUND COLOR */
+}
+
+/* STYLE FOR CLOZE DELETIONS */
+/* Original colour: .cloze, .cloze b, .cloze u, .cloze i { font-size: 22px; font-weight: bold; color: #2B8FB1 !important;} */
+/* yellow : .cloze, .cloze b, .cloze u, .cloze i { font-size: 22px; font-weight: bold; color: #ffff00 !important;} */
+.cloze, .cloze b, .cloze u, .cloze i { font-size: 22px; font-weight: bold; color: var(--cloze_color) !important;}
+
+/* STYLE FOR EXTRA PORTION ON BACK OF CARD */
+#extra, #extra i { font-size: 15px; color:#D7DEE9; font-style: italic; }
+
+/* STYLE TAGS TO APPEAR WHEN HOVERING OVER TOP OF CARD */
+.tags { 
+    color: #A6ABB9;
+    opacity: 0;
+    font-size: 10px; 
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase; 
+    position: fixed; 
+    padding: 0; 
+    top:0;  
+    right: 0;}
+.tags:hover { opacity: 1; position: fixed;}
+
+/* IMAGE STYLE */
+img { display: block; max-width: 100%; max-height: none; margin-left: auto; margin: 10px auto 10px auto;}
+tr {font-size: 12px; }
+
+/* COLOR ACCENTS FOR BOLD-ITALICS-UNDERLINE */
+b { color: #F85738 !important; } /* BOLD STYLE */
+u { text-decoration: underline; color: #F9A825;} /* UNDERLINE STYLE */
+i  { color: #8CC591; } /* ITALICS STYLE */
+a { color: LightGray !important; text-decoration: none; font-size: 10px; font-style: normal; } /* LINK STYLE */
+
+/* FONT SIZE FOR STRONG, EMPHASIS */
+b, u, i, a { font-size: 22px }
+
+/* ADJUSTMENT FOR MOBILE DEVICES */
+.mobile .card.night_mode { color: #D7DEE9; background-color: #181818; } 
+.mobile .card { color: #D7DEE9; background-color: #181818; } /* Day mode on Ankidroid */
+.mobile .tags:hover { opacity: 1; position: relative;}
+
+@font-face { font-family: Menlo; src: url('_menlo.ttf'); }
+@font-face { font-family: Ubuntu; src: url('_ubuntu.ttf'); }
+@font-face { font-family: Fira Code; src: url('_fira.ttf'); }
+@font-face { font-family: Noto Sans Med; src: url('_notosans.ttf'); }
+@font-face { font-family: Noto Sans SemBD; src: url('_notosem.ttf'); }
+@font-face { font-family: Ubuntu Medium; src: url('_ubuntu_med.ttf'); }
+
+
+.ignore {
+    color:#27AE60;
+    color:#E67E22;
+    color:#27AE60;
+    color:#FFFF00;
+    color:#F5FE00;
+    color:#0be881;
+    color:#34e7e4;
+    color:#ffd32a;
+    color:#ffa801;
+    color:#ff3f34;
+    color:#d2dae2;
+    color:#fff200;
+    color:#cd84f1;
+}

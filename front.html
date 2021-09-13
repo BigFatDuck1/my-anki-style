@@ -1,0 +1,95 @@
+<div class='background-div' id="txt">
+    <div id="kard">
+        <div class="tags">{{Tags}}</div>
+        <br>
+        {{cloze:Text}}
+    </div>
+    <span class="timer" id="s2"><span>
+</div>
+
+<!--Random color for Cloze part, delete or modify this if you want the default blue color-->
+
+<script>
+
+    var sheet = document.styleSheets[4];
+    var rules = sheet.cssRules || sheet.rules;
+    var colors = ['#333B45', '#141322', '#222'];
+    var random_color = colors[Math.floor(Math.random() * colors.length)];
+    
+    var fonts = ['Menlo', 'Ubuntu', 'Fira Code', 'Noto Sans Med', 'Noto Sans SemBD', 'Ubuntu Medium']
+    var random_font = fonts[Math.floor(Math.random() * fonts.length)];
+    document.getElementById('txt').style.fontFamily = random_font;
+
+    //Random variable 
+    // Get the root element
+    var r = document.querySelector(':root');
+
+    // Create a function for getting a variable value
+    function myFunction_get() {
+        // Get the styles (properties and values) for the root
+        var rs = getComputedStyle(r);
+    }
+
+    // Change to random colour
+    var cloze_color = [
+        '#27AE60', //Green
+        '#E67E22', //Orange
+        '#FFFF00', //Yellow
+        '#34e7e4', //Light blue
+        '#ffa801', //Orange
+        '#ff3f34', //Red
+        '#d2dae2', //White
+        '#cd84f1', //Magneta
+
+        //Solaris colours
+        '#b58900', //Yellow
+        '#cb4b16', //Orange
+        '#dc322f', //Red
+        '#d33682', //Magneta
+        '#6c71c4', //Violet
+        '#268bd2', //Blue
+        '#859900'  //Green
+    ];
+    var random_cloze_color = cloze_color[Math.floor(Math.random() * cloze_color.length)];
+
+    // Create a function for setting a variable value
+    function myFunction_set() {
+        // Set the value of variable --cloze_color to another value
+        r.style.setProperty('--cloze_color', random_cloze_color);
+    }
+
+    myFunction_set()
+
+</script>
+
+
+<!-- REMOVE EVERYHTING BELOW THIS LINE TO GET RID OF THE COUNTDOWN -->
+
+<script>
+    function countdown(elementName, minutes, seconds) {
+        var element, endTime, hours, mins, msLeft, time;
+
+        function twoDigits(n) {
+            return (n <= 9 ? "0" + n : n);
+        }
+        
+        function updateTimer() {
+            msLeft = endTime - (+new Date);
+            if (msLeft < 1000) {
+                element.innerHTML = "Countdown's Over!";
+            } else {
+                time = new Date(msLeft);
+                hours = time.getUTCHours();
+                mins = time.getUTCMinutes();
+                element.innerHTML = (hours ? hours + ':' + twoDigits(mins) : mins) + ':' + twoDigits(time.getUTCSeconds());
+                setTimeout(updateTimer, time.getUTCMilliseconds() + 500);
+            }
+        }
+
+        element = document.getElementById(elementName);
+        endTime = (+new Date) + 1000 * (60 * minutes + seconds) + 500;
+        updateTimer();
+    }
+
+    countdown("s2", 0, 15);//2nd value is the minute, 3rd is the seconds
+</script>

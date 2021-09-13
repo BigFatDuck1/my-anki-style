@@ -1,0 +1,58 @@
+<div class="background-div" id="txt">
+    <div id="kard">
+        <div class="tags" id='tags'>{{Tags}}</div>
+        <br>
+        {{cloze:Text}}
+        <div>&nbsp;</div>
+        <div id='extra'>{{Extra}}</div>
+    </div>
+</div>
+
+<script>
+    var sheet = document.styleSheets[4];
+    var fonts = ['Menlo', 'Ubuntu', 'Fira Code', 'Noto Sans Med', 'Noto Sans SemBD', 'Ubuntu Medium']
+    var random_font = fonts[Math.floor(Math.random() * fonts.length)];
+    var rules = sheet.cssRules || sheet.rules;
+    document.getElementById('txt').style.fontFamily = random_font;
+
+    //Random variable -----------------------
+    // Get the root element
+    var r = document.querySelector(':root');
+
+    // Create a function for getting a variable value
+    function myFunction_get() {
+        // Get the styles (properties and values) for the root
+        var rs = getComputedStyle(r);
+    }
+
+    // Change to random colour
+    var cloze_color = ['#27AE60',
+        '#27AE60', //Green
+        '#E67E22', //Orange
+        '#FFFF00', //Yellow
+        '#34e7e4', //Light blue
+        '#ffa801', //Orange
+        '#ff3f34', //Red
+        '#d2dae2', //White
+        '#cd84f1', //Magneta
+
+        //Solaris colours
+        '#b58900', //Yellow
+        '#cb4b16', //Orange
+        '#dc322f', //Red
+        '#d33682', //Magneta
+        '#6c71c4', //Violet
+        '#268bd2', //Blue
+        '#859900'  //Green
+    ];
+    var random_cloze_color = cloze_color[Math.floor(Math.random() * cloze_color.length)];
+
+    // Create a function for setting a variable value
+    function myFunction_set() {
+        // Set the value of variable --cloze_color to another value
+        r.style.setProperty('--cloze_color', random_cloze_color);
+    }
+
+    myFunction_set()
+
+</script>
